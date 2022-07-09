@@ -1,7 +1,8 @@
+/* This will get rid of the default setting on website.  */
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Volkorn', serif;
+    font-family: 'Vollkorn', serif;
     list-style-type: none;
     text-decoration: none;
     box-sizing: border-box;
@@ -11,7 +12,8 @@
 html {
     font-size: 62.5%;
 }
-
+/* So that we dont have to style the same colors over and over. we want to specify them 
+on a global scope so we use :root used and set the colors up so they can be called upon later thru a function*/
 :root {
    --primary-color: #2b81e4;
    --secondary-color: #eee;
@@ -19,9 +21,35 @@ html {
    --grey-color: #555;
    --light-grey-color: #777;
 }
-
+/* Same for centered content any time I want something centered in my HTML document
+we want to use flexbox and in order for it to work we need 3 different property pairs
+ so now all we have to do to center content is to add the class of center and then 
+ it will follow style rules*/
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+/* To be able to use the variables that we created earlier we must use the
+ var function and pass in the argument of secoundary color for it to work properly. */
+.container {
+    background-color: var
+    (--secondary-color);
+    margin: 3.5rem;
+    box-shadow: 0 1rem 3rem var
+    (--grey-color);
+}
+
+/* At top and bottom of header we have same amount of space
+both of them equal to 3.5rem so a total of 7rem we know this
+ because the size of margin is stated above in the .container.
+ In order to create same space at the end of margin we need to 
+ use the calc(calculation) function (100vh - 7rem) 100% of the 
+ viewport and 7rem is the sum of the space at the top and bottom.*/
+.header { 
+    width: 100%;
+    height: cal(100vh - 7rem);
+    background: linear-gradient(rgba(18, 113, 255, .5),
+    rgba(18, 113, 255, .3)), url(./images/header-bg.jpg) center no-repeat;
+    background-size: cover;
 }
