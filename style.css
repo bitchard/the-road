@@ -48,8 +48,22 @@ both of them equal to 3.5rem so a total of 7rem we know this
  viewport and 7rem is the sum of the space at the top and bottom.*/
 .header { 
     width: 100%;
-    height: cal(100vh - 7rem);
+    height: calc(100vh - 7rem);
     background: linear-gradient(rgba(18, 113, 255, .5),
     rgba(18, 113, 255, .3)), url(./images/header-bg.jpg) center no-repeat;
     background-size: cover;
+}
+.header-text {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+.heading {
+    font-size: 8rem;
+    color: var(--white-color);
+}
+
+.header-paragraph {
+    font-size: 5rem;
+    font-weight: 500;
 }
