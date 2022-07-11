@@ -33,11 +33,9 @@ we want to use flexbox and in order for it to work we need 3 different property 
 /* To be able to use the variables that we created earlier we must use the
  var function and pass in the argument of secoundary color for it to work properly. */
 .container {
-    background-color: var
-    (--secondary-color);
+    background-color: var(--secondary-color);
     margin: 3.5rem;
-    box-shadow: 0 1rem 3rem var
-    (--grey-color);
+    box-shadow: 0 1rem 3rem var(--grey-color);
 }
 
 /* At top and bottom of header we have same amount of space
@@ -50,7 +48,7 @@ both of them equal to 3.5rem so a total of 7rem we know this
     width: 100%;
     height: calc(100vh - 7rem);
     background: linear-gradient(rgba(18, 113, 255, .5),
-    rgba(18, 113, 255, .3)), url(./images/header-bg.jpg) center no-repeat;
+    rgba(18, 113, 255, .3)), url(images/header-bg.jpg) center no-repeat;
     background-size: cover;
 }
 .header-text {
@@ -66,4 +64,19 @@ both of them equal to 3.5rem so a total of 7rem we know this
 .header-paragraph {
     font-size: 5rem;
     font-weight: 500;
+}
+
+/* Navbar */
+.navbar-icon {
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+/* Popular Tours */
+.popular-tours {
+    padding
 }
