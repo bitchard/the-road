@@ -13,7 +13,7 @@ html {
     font-size: 62.5%;
 }
 /* So that we dont have to style the same colors over and over. we want to specify them 
-on a global scope so we use :root used and set the colors up so they can be called upon later thru a function*/
+on a global scope so we use :root and set the colors up so they can be called upon later thru a function*/
 :root {
    --primary-color: #2b81e4;
    --secondary-color: #eee;
@@ -36,37 +36,9 @@ we want to use flexbox and in order for it to work we need 3 different property 
     background-color: var(--secondary-color);
     margin: 3.5rem;
     box-shadow: 0 1rem 3rem var(--grey-color);
+    overflow: hidden;
 }
-
-/* At top and bottom of header we have same amount of space
-both of them equal to 3.5rem so a total of 7rem we know this
- because the size of margin is stated above in the .container.
- In order to create same space at the end of margin we need to 
- use the calc(calculation) function (100vh - 7rem) 100% of the 
- viewport and 7rem is the sum of the space at the top and bottom.*/
-.header { 
-    width: 100%;
-    height: calc(100vh - 7rem);
-    background: linear-gradient(rgba(18, 113, 255, .5),
-    rgba(18, 113, 255, .3)), url(images/header-bg.jpg) center no-repeat;
-    background-size: cover;
-}
-.header-text {
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-}
-.heading {
-    font-size: 8rem;
-    color: var(--white-color);
-}
-
-.header-paragraph {
-    font-size: 5rem;
-    font-weight: 500;
-}
-
-/* Navbar */
+/* Start Navbar */
 .navbar-icon {
     width: 5.5rem;
     height: 5.5rem;
@@ -76,7 +48,165 @@ both of them equal to 3.5rem so a total of 7rem we know this
     flex-direction: column;
 }
 
-/* Popular Tours */
-.popular-tours {
-    padding
+.open-navbar-icon {
+    position: fixed;
+    top: 6.5rem;
+    left: 6.5rem;
+    z-index: 200;
 }
+
+.navbar-icon .line {
+    height: 0.2rem;
+    width: 3.5rem;
+    background-color: var(--light-grey-color);
+}
+
+.open-navbar-icon .line {
+    margin: 0.3rem 0;
+}
+
+.navbar-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    left: 0;
+    bottom: -100%;
+    opacity: 0;
+    z-index: 300;
+    padding: 3.5rem 5.5rem 3.5rem;
+    transition: bottom 0.5s, opacity 0.2s;
+}
+
+.change .navbar-wrapper {
+    bottom: 0;
+    opacity:1;
+    transition: bottom 0.5s opacity 0.2s 0.25s;
+}
+
+.navbar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+       url(images/navbar-bg.jpg) center no-repeat;
+       background-size: cover;
+       position: relative;
+       overflow-y: hidden;
+}
+
+.close-navbar-icon {
+    position: absolute;
+    top: 2.5rem;
+    right: 3rem;
+    z-index: 300;
+}
+
+.close-navbar-icon .line {
+    position: absolute;
+}
+
+.line-1 {
+    transform: rotate(40deg);
+}
+
+.line-2 {
+    transform: rotate(-40deg);
+}
+
+.nav-list {
+    height: 100%;
+    display: flex;
+}
+
+.nav-link {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--white-color);
+    text-transform: uppercase;
+    width: 100%;
+    opacity : 0.8;
+    position: realtive;
+    top: -100%;
+    transition: all 0.3s;
+}
+.change .nav-link {
+    top: 0;
+}  
+
+.nav-link:hover {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+.change .nav-link:nth-child(1) {
+    transition: top 1s 0.4s, opacity 0.3, color 0.3;
+}
+
+.change .nav-link:nth-child(2) {
+    transition: top 1s 0.6s, opacity 0.3, color 0.3;
+}
+
+.change .nav-link:nth-child(3) {
+    transition: top 1s 0.8s, opacity 0.3, color 0.3;
+}
+
+.change .nav-link:nth-child(4) {
+    transition: top 1s 1s, opacity 0.3, color 0.3;
+}
+.change .nav-link:nth-child(5) {
+    transition: top 1s 1.2s, opacity 0.3, color 0.3;
+}
+ 
+/* End of Navbar */
+
+/* Start of Header */
+/* At top and bottom of header we have same amount of space
+both of them equal to 3.5rem so a total of 7rem we know this
+ because the size of margin is stated above in the .container.
+ In order to create same space at the end of margin we need to 
+ use the calc(calculation) function (100vh - 7rem) 100% of the 
+ viewport and 7rem is the sum of the space at the top and bottom.*/
+ .header { 
+    width: 100%;
+    height: calc(100vh - 7rem);
+    background: linear-gradient(rgba(18, 113, 255, .5),
+    rgba(18, 113, 255, .3)), url(images/header-bg.jpg) center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.header-text {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-shadow: 0.3rem .5rem var(--grey-color)
+}
+.heading {
+    font-size: 8rem;
+    color: var(--white-color);
+}
+
+.header-paragraph {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    max-width: 70rem;
+    margin: auto;
+}
+.logo {
+    position: absoulte;
+    top:4rem;
+    right:rem;
+}
+.logo h1 span{
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    background-color: var(--white-color);
+    width: 3.5rem;
+    height: 3.5rem;
+    display: block;
+}
+/* End of Header */
+
+
