@@ -30,6 +30,10 @@ So here you can see its working now
 This is after the code has been replaced for the navbar and header as you can see its almost how it should have looked from the start. 
 ![Screenshot (107)](https://user-images.githubusercontent.com/99539947/178170161-4e8ce4c6-5a54-4a1c-af3b-f94a24a27b5c.png)
 
+This is the before of again finally fixing my mistakes and styling the header, navbar and getting the animation to work for both header and ballon.
+![Screenshot (107)](https://user-images.githubusercontent.com/99539947/178614688-4e06f016-d5e0-4b89-8a09-5ae279e9f244.png)
+![Screenshot (108)](https://user-images.githubusercontent.com/99539947/178614700-0e96f31b-d39c-4f1f-bd6d-de531c9aeb4e.png)
+
 2.[Technologies](#technologies)
 ***
 3.[Installation](#installation)
